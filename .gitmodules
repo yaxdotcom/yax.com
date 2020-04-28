@@ -1,0 +1,3 @@
+[submodule "themes/bulma"]
+	path = themes/bulma
+	url = https://github.com/DanielKehoe/bulma
