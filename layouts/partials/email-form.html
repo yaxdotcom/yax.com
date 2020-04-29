@@ -1,10 +1,15 @@
-            <div class="field is-grouped has-addons-centered">
-              <div class="control is-expanded">
-                <input class="input is-large" type="text" placeholder="Join the beta waitlist: you@example.org">
-              </div>
-              <div class="control">
-                <a class="button is-large is-danger">
+<form id="sib-form" method="POST" class="subscribe" action="https://acd1fd2f.sibforms.com/serve/MUIEAKdcXfpkPghHHFEefZD2brKsMY1V2ZMHBn3s7BxIKWsuNBqA0brhXc15h6XQc6mktttVlz0RvLINMpc_tLWVpiwUYwfrS06tXfoQO8e6UqBZE6VhnuTiAbl05fcQepaIxL73N5FN3SBEs3-ZoK_kfIyIhWgvt7pe3FL_7xJzZbLj-rnnHQGLWFM1mszPFFT9Vd-TH0K4AGgq">
+    <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none">
+    <input type="hidden" name="locale" value="en">
+    <input type="hidden" name="html_type" value="simple">
+    <div class="field is-grouped has-addons-centered">
+        <div class="control is-expanded">
+            <input class="input is-large" type="email" id="EMAIL" name="EMAIL" autocomplete="off" maxlength="200" placeholder="Get six lessons by email: you@mail.com" data-required="true" required />
+        </div>
+        <div class="control">
+            <button class="button is-large is-danger" form="sib-form" type="submit">
                   Sign Up
-                </a>
-              </div>
-            </div>
+                </button>
+        </div>
+    </div>
+</form>
