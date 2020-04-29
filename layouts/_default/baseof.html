@@ -38,48 +38,6 @@
     {{ if ge (len $lazylist) 1 }}
     <script async src="/js/lazysizes.min.js"></script>
     {{ end }}
-    
-    {{ if .IsHome }}
-    <!-- Style for Sendinblue Form -->
-    <style>
-      @font-face {
-        font-display: block;
-        font-family: Roboto;
-        src: url(https://assets.sendinblue.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
-      }
-
-      @font-face {
-        font-display: fallback;
-        font-family: Roboto;
-        font-weight: 600;
-        src: url(https://assets.sendinblue.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
-      }
-
-      @font-face {
-        font-display: fallback;
-        font-family: Roboto;
-        font-weight: 700;
-        src: url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
-      }
-
-      #sib-container input:-ms-input-placeholder {
-        text-align: left;
-        font-family: "Helvetica", sans-serif;
-        color: #c0ccda;
-        border-width: px;
-      }
-
-      #sib-container input::placeholder {
-        text-align: left;
-        font-family: "Helvetica", sans-serif;
-        color: #c0ccda;
-        border-width: px;
-      }
-    </style>
-    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-    <!--  END - Style for Sendinblue Form -->
-    {{ end }} 
-    
 </head>
 <!--theme variation-->
 
@@ -91,27 +49,6 @@
     <script async type="text/javascript" src="/js/bulma.js"></script>
     <script async type="text/javascript"  src="/js/clipboard.min.js"></script>
     <script async type="text/javascript"  src="/js/clip.js"></script>
-    
-    {{ if .IsHome }}
-    <!-- START - JavaScript for Sendinblue Form  -->
-    <script>
-      window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-      window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Sorry, it seems the email address is invalid.";
-      window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
-      window.GENERIC_INVALID_MESSAGE = "Sorry, it seems the email address is invalid.";
-      window.translation = {
-        common: {
-          selectedList: '{quantity} list selected',
-          selectedLists: '{quantity} lists selected'
-        }
-      };
-      var AUTOHIDE = Boolean(1);
-    </script>
-    <script src="https://sibforms.com/forms/end-form/build/main.js">
-    </script>
-    <script src="https://www.google.com/recaptcha/api.js?hl=en"></script>
-    <!-- END - JavaScript for Sendinblue Form -->
-    {{ end }} 
 </body>
 
 </html>
