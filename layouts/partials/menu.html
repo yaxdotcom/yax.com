@@ -43,7 +43,7 @@
       <div class="navbar-item">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-          <a itemprop="url" class="navbar-item {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} is-active{{end}}" href="{{.URL}}"><span itemprop="name">{{ .Name }}</span></a>
+          <a itemprop="url" class="navbar-item has-text-white {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} is-active{{end}}" href="{{.URL}}"><span itemprop="name">{{ .Name }}</span></a>
         {{ end }}
       </div> 
     </div>
