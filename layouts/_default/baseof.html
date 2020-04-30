@@ -38,6 +38,9 @@
     {{ if ge (len $lazylist) 1 }}
     <script async src="/js/lazysizes.min.js"></script>
     {{ end }}
+    {{ if .IsHome }}
+    <script async src="/javascript/sendinblue-subscribe.js"></script>
+    {{ end }}
 </head>
 <!--theme variation-->
 
