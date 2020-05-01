@@ -9,6 +9,7 @@
       {{ $num_to_show := .Site.Params.related_content_limit | default 7 }}
       {{ range first $num_to_show (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
         <a href="{{ .RelPermalink }}">{{ .Title }}</a> &ndash; {{ .ReadingTime }} minutes
+        <br>
       {{ end }}
     </ul>
   </aside>
