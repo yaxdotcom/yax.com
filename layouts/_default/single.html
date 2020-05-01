@@ -11,16 +11,31 @@
 {{ define "main"}}
 
 <div class="container" itemscope itemtype="http://schema.org/BlogPosting">
-     {{ template "_internal/schema.html" . }}
-    <section class="hero is-primary is-medium">
-        <div class="hero-body">
+    {{ template "_internal/schema.html" . }}
+    <section class="hero is-info is bold is-medium">
+        <div class="hero-body" style="padding-bottom:3rem; padding-top:3rem;">
             <div class="container has-text-centered">
-                <h1 class="title is-2" itemprop="headline">
-                    {{.Title}}
-                </h1>
-                {{ if .Description }}
-                <blockquote itemprop="description">{{ .Description }}</blockquote>
-                {{ end }}
+                <div class="columns is-vcentered">
+                    <div class="column is-5">
+
+
+                        <h1 class="title is-2" itemprop="headline">
+                            {{.Title}}
+                        </h1>
+                        {{ if .Description }}
+                        <h3 itemprop="description" class="subtitle is-4">
+                            {{ .Description }}
+                        </h3>
+                        {{ end }}
+                    </div>
+                    <div class="column is-6">
+                        {{ if .Params.content_img_path }}
+                        <figure class="image is-16by9">
+                            <img src="{{ .Params.content_img_path | relURL }}" alt="{{ .Params.title }}" />
+                        </figure>
+                        {{ end }}
+                    </div>
+                </div>
             </div>
         </div>
     </section>
