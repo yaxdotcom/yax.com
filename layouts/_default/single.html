@@ -12,6 +12,8 @@
 
 <div class="container" itemscope itemtype="http://schema.org/BlogPosting">
     {{ template "_internal/schema.html" . }}
+    <br>
+    <br> 
     <section class="hero is-info is bold is-medium">
         <div class="hero-body" style="padding-bottom:3rem; padding-top:3rem;">
             <div class="container has-text-centered">
@@ -39,34 +41,33 @@
             </div>
         </div>
     </section>
-    <section class="section blog">
-        <div class="container">
-            <p>{{ partial "post/meta" . }}</p>
-            <div class="columns is-mobile">
-                <div class="column">
-                    <div class="content blog-post section" itemprop="articleBody">
-
-                        {{ partial "toc" .}}
-                        <hr>
-                        {{.Content}}
-                    </div>
-                    <div class="title is-4">
-                        {{ partial "post/byauthor" . }}
+<section class="section blog">
+    <div class="container">
+        <p>{{ partial "post/meta" . }}</p>
+        <div class="columns is-mobile">
+            <div class="column">
+                <div class="content blog-post section" itemprop="articleBody">
+                    {{ partial "toc" .}}
+                    <hr> 
+                    {{.Content}}
+                </div>
+                <footer class="footer">
+                    <div class="content has-text-centered">
+                        {{ partial "post/byauthor" . }} 
                         {{ partial "post/related-content" . }}
                     </div>
-          
-                    {{ if .Site.DisqusShortname }}
-                    <article>
+                </footer>
+                {{ if .Site.DisqusShortname }}
+                <article>
+                    {{ partial "disqus.html" . }}
+                </article>
+                {{ end }}
 
-                        {{ partial "disqus.html" . }}
-                    </article>
-                    {{ end }}
-            
-                </div>
             </div>
-        
         </div>
-    </section>
+
+    </div>
+</section>
 </div>
 
 {{ end }} 
