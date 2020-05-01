@@ -1,5 +1,5 @@
 +++
-canonical_url = ""
+canonical_url = "https://danielkehoe.com/posts/early-days-of-the-web-1991/"
 content_img_path = ""
 date = 2020-01-17T16:00:00Z
 excerpt = "In 1991 I was writing for NeXTWORLD magazine, which was a lot of fun, because I got to work with, and write about, people who were doing fascinating things with computer technology. "

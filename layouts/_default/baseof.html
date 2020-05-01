@@ -25,11 +25,11 @@
     {{ template "_internal/google_analytics_async.html" . }} 
     {{ if .RSSLink }}
     <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" /> {{ end }}
-    
-    <link rel="canonical" href="{{ .Permalink }}"> {{ if (isset .Params "prev") }}
-    <link rel="prev" href="{{ .Params.prev }}"> {{ end }} {{ if (isset .Params "next") }}
-    <link rel="next" href="{{ .Params.next }}"> {{ end }} {{ partial "favicon" . }}
 
+    {{ if .Params.canonical_url }}
+    <link rel="canonical" href="{{ .Params.canonical_url }}"/>
+    {{ end }}
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> {{ if .Site.Params.theme_variant }}
     <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/{{.Site.Params.theme_variant}}/bulmaswatch.min.css"> {{else}}
     <link rel="stylesheet" href="/css/bulma.css"> {{end}}

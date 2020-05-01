@@ -1,16 +1,15 @@
 <div class="column is-full-desktop" itemscope itemtype="http://schema.org/CreativeWork">
     <h1 class="blog-timestamp">
-        {{ if eq .Type "post" }}
+        {{ if eq .Type "posts" }}
         <h1 class="">
             {{ partial "post/meta" . }}
         </h1>
         {{ end }}
     </h1>
-    <h1 class="title">
+    <h1 class="title" style="margin-bottom:0;">
         <a href="{{ .Permalink }}" itemprop="headline">{{ .Title }}</a>
     </h1>
-    {{ if .Params.date }}
-    <time class="is-italic has-text-grey-light" datetime="{{ .Params.Date | dateFormat " 2006-01-02 " }}">{{ .Params.Date | dateFormat "January 02, 2006" }}</time> {{ end }} {{ if .Params.excerpt }}
+    {{ if .Params.excerpt }}
     <blockquote itemprop="about">{{ .Params.excerpt }}</blockquote>
     {{ end }}
 </div>
