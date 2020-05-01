@@ -1,0 +1,52 @@
+<footer class="footer has-text-white" style="background-color:black;">
+    <div class="container">
+        <div class="content has-text-centered">
+            <div class="columns">
+                <div class="column">
+                    <div class="title is-6 has-text-white">Platform</div>
+                </div>
+                <div class="column">
+                    <div class="title is-6 has-text-white">Company</div>
+                    <p class="is-size-7">
+                        <a class="has-text-white" href="posts/about-yax/">About Yax</a>
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="title is-6 has-text-white">Support</div>
+                    <p class="is-size-7">
+                        Email us: <a class="has-text-white" href="mailto:daniel@danielkehoe.com">daniel@danielkehoe.com</a>
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="title is-6 has-text-white">Yax</div>
+                    <p class="is-size-7 has-text-left">
+                        You can build and host a website for free with Yax.com, the do-it-yourself alternative to Wix and Squarespace. We encourage the use of web standards so the site you build is easy to maintain. Plus, you own the code you create so you can take it anywhere, without vendor lock-in.
+                    </p>
+                    <p class="is-size-7 has-text-left">
+                        Use our free tutorials to create a high-quality free website.
+                        <br> © 2020 Daniel Kehoe
+                    </p>
+                    
+                    <div>
+                      {{ if .Site.Params.github}}
+                      <a class="has-text-white" target="blank" href="https://github.com/{{.Site.Params.github}}">
+                        <span class="icon">
+                          <i class="fa fa-github"></i>
+                        </span>
+                      </a>
+                      {{end}}
+
+                      {{ if .Site.Params.twitter}}
+                      <a class="has-text-white" target="blank" href="https://twitter.com/{{.Site.Params.twitter}}">
+                        <span class="icon">
+                          <i class="fa fa-twitter"></i>
+                        </span>
+                      </a>
+                      {{end}}
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
