@@ -1,7 +1,7 @@
 +++
 canonical_url = "https://danielkehoe.com/posts/personal-history-punctuating-the-web-1993/"
 content_img_path = "/images/post2-www-talk-1993.png"
-date = 2020-04-24T16:00:00Z
+date = 2020-04-30T16:00:00Z
 excerpt = "One space or two? How should web browsers display space between sentences? Here’s how we came to decide in July 1993."
 layout = "post"
 subtitle = ""
