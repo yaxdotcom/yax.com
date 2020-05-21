@@ -1,7 +1,7 @@
 +++
 canonical_url = "https://yax.com/posts/worklog-may-2020/"
 content_img_path = ""
-date = 2020-05-09T16:00:00Z
+date = 2020-05-20T16:00:00Z
 excerpt = "A day by day description of the technical and business challenges building Yax.com."
 layout = "post"
 subtitle = ""
@@ -53,7 +53,7 @@ Right now, visitors can sign up on the yax.com landing page and get a welcome em
 
 ## May 5, 2020
 
-Day off for personal errands.
+A day for errands in Denpasar
 
 ## May 6, 2020
 
@@ -62,7 +62,7 @@ Did a retrospective and began compiling my daily notes into this worklog.
 
 ## May 7, 2020
 
-Day off for personal errands.
+A day for errands in Denpasar
 
 ## May 8, 2020
 
@@ -76,6 +76,63 @@ I configured Google Analytics to integrate with Google Ads. Not sure if it’s w
 
 ## May 10, 2020
 I completed my retrospective and published the worklog.
+
+## May 11, 2020
+
+A day for errands in Denpasar
+
+## May 12, 2020
+
+A day for errands in Denpasar
+
+## May 13, 2020
+
+Moved to a new villa
+
+## May 14, 2020
+
+### Learned about Deno and Sourcebit
+Read about Deno (an alternative to Node) and Stackbit’s Sourcebit project.
+
+## May 15, 2020
+
+### Learned about Bulma and Hugo
+I took a look at how the “Bulma for Hugo” theme integrates Bulma with Hugo. I saw that Bulma CSS can be customized but it requires setting up Node to run a Sass compiler. I found a [bulma-start](https://github.com/jgthms/bulma-start) project that provides a simple example.
+
+## May 16, 2020
+
+### Installed XCode Command Line Tools
+I wanted to learn about customizing Bulma CSS which requires installation of Node for running a Sass compiler. NPM (the Node Package Manager) requires Apple XCode Command Line Tools for compiling native add-on modules for Node (using node-gyp). I had the XCode CLT installed but after updating to macOS Catalina, XCode CLT was broken. I removed the older version and installed the latest version. I got NPM working properly. Then I took time to update my article at [install-rails-mac.com](https://install-rails-mac.com/) with what I learned about installing XCode CLT on macOS Catalina.
+
+## May 17, 2020
+
+### Learned about customizing Bulma
+I looked at using the [Bulma-Extensions project](https://wikiki.github.io/) to add components to the yax.com website. Investigated setting up custom CSS for Bulma with Node. I tried setting up the Bulma-Extensions calendar component but got stuck integrating the required JavaScript using Node. Realized I didn’t need Bulma custom CSS or JavaScript for the comparison table I’m going to add to the yax.com site. So I just spent several days on an unnecessary detour.
+
+## May 18, 2020
+
+### Set up a comparison page
+I added a static page to the Hugo project for yax.com. Learned how to add an HTML page that incorporates Hugo partials. And how to add a menu item for the new page. I used a pricing table from the [Bulma-Extensions project](https://wikiki.github.io/) as a base component for the comparison table. There’s no content yet for the comparison. I’ll do some research and identify what people care about before adding content to the comparison table.
+
+## May 19, 2020
+
+### Read about tiny websites
+Read today on Hacker News that [“Tiny websites are great”](https://news.ycombinator.com/item?id=23228904). Someone said there’s a need for a service that can:
+* Host static content like Netlify or Neocities
+* Allow you to register a domain
+* Choose a template and enter content with basic markup
+
+I’d say a choice of templates and on-page editing is more important since one can easily register a domain name and host on Netlify.
+
+## May 20, 2020
+
+### Looked at implementing a photo gallery in Mavo
+My friend Dea owns a flower shop in Kuala Lumpur. Last year a web developer built a simple website for her using the Encanto Sites website builder. Last month she found out the web developer was gone and Encanto Sites was shutting down its hosting service. I helped Dea recover her website files and set up the site on Netlify for free hosting. This week she told me she wanted to update her gallery of photos of bouquets. She wants to make simple updates to her site without learning to use a website builder or hiring a web developer. That’s a key pain point I want to address with the Yax project. Updating a simple web page should not require hiring a web developer or relying on a proprietary service that can go out of business. I took a look at [Mavo](https://mavo.io/), an extension to standard HTML that enables on-page editing of web pages. It’s a research project from Lea Verou at the MIT's Computer Science and Artificial Intelligence Laboratory (CSAIL). I tinkered with a photo gallery example. It’s interesting but I encountered some issues (photos didn’t appear after uploading, perhaps because of some permissions issues).
+
+## May 21, 2020
+
+### Implemented an editable website with Mavo
+I decided to explore building website templates that include Mavo for on-page editing so a Yax user will have no need for a website builder application. I built a simple website using a [classless CSS stylesheet](https://www.cssbed.com/) and added Mavo. Nice! Log in using a GitHub account, edit the page in the browser, and versioned changes get saved to a GitHub repository. The HTML head data (title and meta tags) can’t be edited from within the browser so I need to find an easy way to customize the template when forking it from GitHub. I posted a question to the GitHub API Development and Support Forum to get some guidance (Stack Overflow doesn’t have many answers for questions about the GitHub API).
 
 [Previous: Worklog for April 2020]({{< ref "/posts/worklog-april-2020.md" >}})
 
