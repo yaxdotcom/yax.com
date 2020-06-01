@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <title>Yax.com · Template Gallery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Bulma Version 0.8.2-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+</head>
+
+<body>
+    <section class="hero is-info is-small">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="title">
+                    Yax Templates
+                </p>
+                <p class="subtitle">
+                    Free to use, free to host. Click, publish, and edit.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="container" style="margin-top:50px;">
+        <div class="columns features">
+            <div class="column is-4 modal-button" data-target="modal-card">
+                <div class="card is-shady">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="../static/images/yax-template-wip.png" alt="WIP Yax template">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <h4>WIP: The First Yax Template</h4>
+                            <p>Nothing could be simpler. Clean, standards-based HTML. "Classless" styling. Mavo for editing pages in place.</p>
+                            <span class="button is-link modal-button">Select</span>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src="../static/images/daniel-kehoe.jpg" alt="Daniel Kehoe avatar">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-6 has-text-grey">template by<br/>Daniel Kehoe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  ===============
+    HERE BE MODALS
+    ===============  -->
+    <!-- 3dFlipVertical card tiny -->
+    <div id="modal-card" class="modal modal-fx-3dSlit">
+        <div class="modal-background"></div>
+        <div class="modal-content is-tiny">
+            <!-- content -->
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="../static/images/yax-template-wip.png" alt="WIP Yax template">
+                    </figure>
+                </div>
+                <div class="card-content">
+
+                    <form class="form-horizontal" action="https://yax-api.now.sh/api/deploy" method="POST">
+                        
+                        <!-- Template ID-->
+                        <input type="hidden" id="templateId" name="templateId" value="yax-template-wip">
+                        
+                        <fieldset>
+
+                            <!-- Text input-->
+                            <div class="field">
+                                <label class="label" for="github-account">Your GitHub account</label>
+                                <div class="control">
+                                    <input id="github-account" name="github-account" type="text" placeholder="your-github-account" class="input is-small" required="">
+                                    <p class="help">This should be a personal or organization account you've already got on GitHub.</p>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="field">
+                                <label class="label" for="repository">Make up a project name</label>
+                                <div class="control">
+                                    <input id="repository" name="repository" type="text" placeholder="my-website" class="input is-small" required="">
+                                    <p class="help">The project name you enter will become the name of a new GitHub repository.</p>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="field">
+                                <label class="label" for="title">Give your website a title</label>
+                                <div class="control">
+                                    <input id="title" name="title" type="text" placeholder="My.com | My Website" class="input is-small">
+                                    <p class="help">This is the website title you'd like to see in search results and the browser tab.</p>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="field">
+                                <label class="label" for="description">Describe your website</label>
+                                <div class="control">
+                                    <input id="description" name="description" type="text" placeholder="One line description (with some keywords)." class="input is-small">
+                                    <p class="help">Enter a description you'd like to see in search results.</p>
+                                </div>
+                            </div>
+
+                            <!-- Button -->
+                            <div class="field">
+                                <label class="label" for="deploybutton"></label>
+                                <div class="control">
+                                    <button id="deploybutton" name="deploybutton" class="button is-info">Deploy Now</button>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div>
+                                    <p class="help">Click "Deploy Now" and Yax will create a website from this template, with a new GitHub repository to store the site, and hosted on Netlify. Easily edit the website content after it is deployed.</p>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <!-- end content -->
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+    <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+</body>
+
+</html>
