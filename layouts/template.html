@@ -5,10 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
     <title>Yax.com · Template Gallery</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!-- Bulma Version 0.8.2-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.2/css/bulma.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
@@ -73,7 +70,7 @@
                 </div>
                 <div class="card-content">
 
-                    <form class="form-horizontal" action="https://yax-api.now.sh/api/deploy" method="POST">
+                    <form id="github-oauth" class="form-horizontal" action="#" method="POST">
                         
                         <!-- Template ID-->
                         <input type="hidden" id="templateId" name="templateId" value="yax-template-wip">
@@ -140,6 +137,7 @@
     <button class="modal-close is-large" aria-label="close"></button>
     <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script async src="../static/javascript/github-oauth.js"></script>
 </body>
 
 </html>
