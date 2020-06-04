@@ -14,6 +14,7 @@ const confirmable = document.getElementsByClassName('confirmable');
 const deploy_button = document.getElementById('deploy-button')
 const confirm_button = document.getElementById('confirm-button')
 const reset_link = document.getElementById('reset-link')
+const repo_name = document.getElementById('repo-name')
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -38,7 +39,6 @@ form.addEventListener("formdata", event => {
     const encoded_state = btoa(JSON.stringify(data));
     
     const url = new URL('https://github.com/login/oauth/authorize')
-//    const url = new URL('https://danielkehoe-github-auth.builtwithdark.com/fail')
     url.searchParams.set('client_id', GITHUB_CLIENT_ID)
     url.searchParams.set('scope', 'user repo')
     url.searchParams.set('state', encoded_state)
@@ -50,13 +50,14 @@ form.addEventListener("formdata", event => {
     if (!('URLSearchParams' in window)) {
         alert("Your browser does not support JavaScript URLSearchParams. Please use a newer browser.")
     } else {
-        confirm(url)
+        confirm(url, data)
     }
     
 })
 
-function confirm(url) {
+function confirm(url, data) {
     confirm_button.href = url
+    repo_name.innerHTML = data['repository']
     deploy_button.style.display = 'none'
     for (var i = 0; i < confirmable.length; i ++) {
         confirmable[i].style.display = 'block';

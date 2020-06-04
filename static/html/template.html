@@ -9,6 +9,7 @@
     <!-- Bulma Version 0.8.2-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.2/css/bulma.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+    <link rel="stylesheet" href="../css/bulma-checkradio.min.css">
 </head>
 
 <body>
@@ -76,31 +77,36 @@
                         <input type="hidden" id="templateId" name="templateId" value="yax-template-wip">
                         
                         <fieldset>
-
-                            <!-- Text input-->
+                            
+                            <!-- Radio buttons-->
                             <div class="field">
-                                <label class="label" for="github-account">Your GitHub account</label>
-                                <div class="control">
-                                    <input id="github-account" name="github-account" type="text" placeholder="your-github-account" class="input is-small" required="">
-                                    <p class="help">This should be a personal or organization account you've already got on GitHub.</p>
+                                <label class="label">GitHub account</label>
+                                <div>
+                                    <input class="is-checkradio is-small" id="github-account-yes" type="radio" name="github-account" checked="checked">
+                                    <label for="github-account-yes">I have a GitHub account</label>
                                 </div>
+                                <div>
+                                    <input class="is-checkradio is-small" id="github-account-no" type="radio" name="github-account">
+                                    <label for="github-account-no">Create a GitHub account for me</label>
+                                </div>
+                                <p class="help">We'll store your website files on <a href="https://github.com/">GitHub</a>.</p>
                             </div>
 
                             <!-- Text input-->
                             <div class="field">
-                                <label class="label" for="repository">Make up a project name</label>
+                                <label class="label" for="repository">Give a project name</label>
                                 <div class="control">
                                     <input id="repository" name="repository" type="text" placeholder="my-website" class="input is-small" required="">
-                                    <p class="help">The project name you enter will become the name of a new GitHub repository.</p>
+                                    <p class="help">A name for a new GitHub repository for your website files.</p>
                                 </div>
                             </div>
 
                             <!-- Text input-->
                             <div class="field">
-                                <label class="label" for="title">Give your website a title</label>
+                                <label class="label" for="title">Give a website title</label>
                                 <div class="control">
                                     <input id="title" name="title" type="text" placeholder="My.com | My Website" class="input is-small">
-                                    <p class="help">This is the website title you'd like to see in search results and the browser tab.</p>
+                                    <p class="help">A title you'd like to see in search results and the browser tab.</p>
                                 </div>
                             </div>
 
@@ -109,7 +115,7 @@
                                 <label class="label" for="description">Describe your website</label>
                                 <div class="control">
                                     <input id="description" name="description" type="text" placeholder="One line description (with some keywords)." class="input is-small">
-                                    <p class="help">Enter a description you'd like to see in search results.</p>
+                                    <p class="help">A description you'd like to see in search results.</p>
                                 </div>
                             </div>
 
@@ -126,7 +132,7 @@
 
                             <div class="field">
                                 <div class="confirmable" style="display:none">
-                                    <p class="help"><a href="#" id="reset-link">Reset form</a> or click "Confirm" and Yax will create a website from this template, with a new GitHub repository to store the site, and hosted on Netlify. Easily edit the website content after it is deployed.</p>
+                                    <p class="help"><a href="#" id="reset-link">Reset form</a> or click "Confirm." Yax will create a website from this template, storing the files in your GitHub account in a repository named <span id="repo-name">repo</span>. With your permission, we'll welcome you with an onboarding email at your GitHub email address.</p>
                                 </div>
                             </div>
                         </fieldset>
