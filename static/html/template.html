@@ -117,14 +117,16 @@
                             <div class="field">
                                 <label class="label" for="deploybutton"></label>
                                 <div class="control">
-                                    <button id="deploybutton" name="deploybutton" class="button is-info">Deploy Now</button>
-                                    <a class="button is-success" href="https://github.com/login/oauth/authorize?client_id=6fdfd2e72ae4345b0361&scope=user+repo&state=eyJ0ZW1wbGF0ZUlkIjoieWF4LXRlbXBsYXRlLXdpcCIsImdpdGh1Yi1hY2NvdW50IjoiZm9vIiwicmVwb3NpdG9yeSI6ImJhciIsInRpdGxlIjoiYmF6IiwiZGVzY3JpcHRpb24iOiJxdXgifQ%3D%3D&redirect_uri=https%3A%2F%2Fdanielkehoe-github-auth.builtwithdark.com%2Fauth_redirect">Confirm</a>
+                                    <button id="deploy-button" name="deploy-button" class="button is-info" style="display:block">Deploy Now</button>
+                                    <div class="confirmable" style="display:none">
+                                        <a id="confirm-button" name="confirm-button" class="button is-success" href="#">Confirm</a>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="field">
-                                <div>
-                                    <p class="help">Click "Deploy Now" and Yax will create a website from this template, with a new GitHub repository to store the site, and hosted on Netlify. Easily edit the website content after it is deployed.</p>
+                                <div class="confirmable" style="display:none">
+                                    <p class="help"><a href="#" id="reset-link">Reset form</a> or click "Confirm" and Yax will create a website from this template, with a new GitHub repository to store the site, and hosted on Netlify. Easily edit the website content after it is deployed.</p>
                                 </div>
                             </div>
                         </fieldset>

@@ -5,17 +5,27 @@
 /* eslint-disable no-console */
 /* eslint-disable func-style  */
 
-/* Submits form data to GitHub for user authentication */
+/* Requests GitHub user authentication and redirects with form data */
 
-// Client ID for application regsietred as yax-localhost-test
+// Client ID for application registered with GitHub as yax-localhost-test
 const GITHUB_CLIENT_ID = "6fdfd2e72ae4345b0361"
-
 const form = document.getElementById('github-oauth')
+const confirmable = document.getElementsByClassName('confirmable');
+const deploy_button = document.getElementById('deploy-button')
+const confirm_button = document.getElementById('confirm-button')
+const reset_link = document.getElementById('reset-link')
 
 form.addEventListener("submit", function (event) {
-    console.log("heard a submit event")
     event.preventDefault();
     new FormData(form);
+})
+
+reset_link.addEventListener("click", function () {
+    form.reset()
+    deploy_button.style.display = 'block'
+    for (var i = 0; i < confirmable.length; i ++) {
+        confirmable[i].style.display = 'none';
+    }
 })
 
 form.addEventListener("formdata", event => {
@@ -24,47 +34,31 @@ form.addEventListener("formdata", event => {
     for(let [name, value] of event.formData) {
         data[name] = value
     }
-    
-    console.log("here's the form data")
-    Object.keys(data).forEach((key) => console.log(key, data[key]))
-    
-    const json = JSON.stringify(data)
-    console.log("here's the json")
-    console.log(json)
-    
-    const encoded_state = btoa(json);
-    console.log("here's the encoded")
-    console.log(encoded_state)
-    
-    if (!('URLSearchParams' in window)) {
-      console.log("browser does not support URLSearchParams")
-    }
 
-     const url = new URL('https://github.com/login/oauth/authorize')
+    const encoded_state = btoa(JSON.stringify(data));
+    
+    const url = new URL('https://github.com/login/oauth/authorize')
 //    const url = new URL('https://danielkehoe-github-auth.builtwithdark.com/fail')
     url.searchParams.set('client_id', GITHUB_CLIENT_ID)
     url.searchParams.set('scope', 'user repo')
     url.searchParams.set('state', encoded_state)
     url.searchParams.set(
         'redirect_uri',
-        'https://danielkehoe-github-auth.builtwithdark.com/auth_redirect'
+        'https://danielkehoe-github-auth.builtwithdark.com/auth_fail'
     )
     
-    console.log("here's the URI")
-    console.log(url)
+    if (!('URLSearchParams' in window)) {
+        alert("Your browser does not support JavaScript URLSearchParams. Please use a newer browser.")
+    } else {
+        confirm(url)
+    }
     
-    const options = {
-        method: 'GET',
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Origin':	'yax.com',
-            'Accept': 'application/vnd.github.v3.full+json'
-    }
-        
-    }
-      
-    fetch(url, options)
-        .then(res => res.json())
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
 })
+
+function confirm(url) {
+    confirm_button.href = url
+    deploy_button.style.display = 'none'
+    for (var i = 0; i < confirmable.length; i ++) {
+        confirmable[i].style.display = 'block';
+    }
+}
