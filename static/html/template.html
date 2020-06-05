@@ -9,7 +9,8 @@
     <!-- Bulma Version 0.8.2-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.2/css/bulma.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
-    <link rel="stylesheet" href="../css/bulma-checkradio.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-checkradio@1.1.1/dist/css/bulma-checkradio.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-pageloader@0.3.0/dist/css/bulma-pageloader.min.css">
 </head>
 
 <body>
@@ -55,6 +56,8 @@
             </div>
         </div>
     </section>
+    <!-- Spinner to appear after form submission -->
+    <div id="spinner" class="pageloader"><span class="title">Saving website template to GitHub</span></div>
     <!--  ===============
     HERE BE MODALS
     ===============  -->
@@ -143,10 +146,8 @@
         </div>
         <!-- end content -->
     </div>
-    <button class="modal-close is-large" aria-label="close"></button>
     <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script async src="../javascript/github-oauth.js"></script>
+    <script async src="../javascript/initiate-deploy.js"></script>
 </body>
 
 </html>
