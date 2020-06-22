@@ -133,7 +133,20 @@ I wrote a section “Try a One Page Demo” for my “Build a Web Component” t
 
 ## June 21, 2020
 
-I updated and published the worklog for yax.com.
+Updated the worklog for yax.com.
 
+## June 22, 2020
+
+Updated and published the worklog for yax.com. 
+
+I saw [Brian Haferkamp](https://twitter.com/BrianHaferkamp/status/1274056504879058945) is working on a [project](https://github.com/unboundsites/personal-light) to build websites with:
+
+* Fast HTML
+- Front end editing via Mavo
+- No CMS
+- No database 
+- Persistent data storage via Github
+
+Very good! Validating the concept.
 
 [Previous: Worklog for May 2020]({{< ref "/posts/worklog-may-2020.md" >}})
