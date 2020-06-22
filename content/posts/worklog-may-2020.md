@@ -83,7 +83,7 @@ A day for personal business.
 
 ## May 12, 2020
 
-A day for personal businessr.
+A day for personal business.
 
 ## May 13, 2020
 
