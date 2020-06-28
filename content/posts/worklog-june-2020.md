@@ -11,7 +11,7 @@ description = "How I built Yax.com. The worklog from June 2020."
 draft = false
 categories = ["worklog"]
 tags = ["worklog", ""]
-author = "Daniel Kehoe" 
+author = "Daniel Kehoe"
 
 +++
 
@@ -37,7 +37,7 @@ I want to create a one-step process for selecting a Yax website template, authen
 ## June 4, 2020
 
 ### GitHub Authentication
-I can initiate the GitHub authentication by clicking a simple link or button on a yax.com web page. But the link doesn’t contain the `state` parameter I need to pass to the Yax API endpoint. I tried initiating the HTTP GET request from JavaScript using `fetch` with the  `state` parameter in the query string. That doesn’t work because I get a CORS error. Thought about it some more and realized I don’t need to use `fetch` because I’m not trying to get back any data. Instead I can just use JavaScript `window.open(url, "_self")` with a URL that contains the `state` parameter in the query string. Works nicely.  
+I can initiate the GitHub authentication by clicking a simple link or button on a yax.com web page. But the link doesn’t contain the `state` parameter I need to pass to the Yax API endpoint. I tried initiating the HTTP GET request from JavaScript using `fetch` with the  `state` parameter in the query string. That doesn’t work because I get a CORS error. Thought about it some more and realized I don’t need to use `fetch` because I’m not trying to get back any data. Instead I can just use JavaScript `window.open(url, "_self")` with a URL that contains the `state` parameter in the query string. Works nicely.
 
 ## June 5, 2020
 
@@ -89,7 +89,7 @@ Also, after I learned that lit-html is popular, I found great resources on the [
 
 I liked this quote from [Leon van Wijk](https://craftsmen.nl/polymer-is-dead-long-live-web-components/):
 
-> The concept of Web Components promises a future where web applications are built without frameworks. Instead of frameworks, developers could stick to ‘vanilla’ JavaScript and use the Web API’s made available by the browser. 
+> The concept of Web Components promises a future where web applications are built without frameworks. Instead of frameworks, developers could stick to ‘vanilla’ JavaScript and use the Web API’s made available by the browser.
 
 ## June 13, 2020
 
@@ -133,20 +133,38 @@ I wrote a section “Try a One Page Demo” for my “Build a Web Component” t
 
 ## June 21, 2020
 
-Updated the worklog for yax.com.
+Updated and published the worklog for yax.com.
 
 ## June 22, 2020
 
-Updated and published the worklog for yax.com. 
+### Writing a Tutorial About Building a Web Component
+I wrote a “View in a Browser” section for the “Build a Web Component” tutorial.
 
-I saw [Brian Haferkamp](https://twitter.com/BrianHaferkamp/status/1274056504879058945) is working on a [project](https://github.com/unboundsites/personal-light) to build websites with:
+I saw [Brian Haferkamp](https://twitter.com/BrianHaferkamp/status/1274056504879058945) is working on a [project](https://github.com/unboundsites/personal-light) to build a basic personal website with in-page editing via Mavo. That’s the kind of template I want to make available with yax.com.
 
-* Fast HTML
-- Front end editing via Mavo
-- No CMS
-- No database 
-- Persistent data storage via Github
+## June 23, 2020
 
-Very good! Validating the concept.
+### Setting up tutorials.yax.com
+Now that I’ve got a draft of a first tutorial, I want to set up a site at tutorials.yax.com. I want to find a nice template for tutorials that uses the Bulma CSS framework as a starting point for my own design. I looked for templates used for documentation. Turns out it is difficult to search for “Bulma documentation theme or template” because all the results are about “Bulma documentation.” Finally, I found documentation for the [Fastify web framework](https://www.fastify.io/docs/latest/Getting-Started/) that uses Bulma styling with Nunjucks templates. That’s a good beginning point.
+
+## June 24, 2020
+
+### Setting up tutorials.yax.com
+I started down the path of setting up a tutorials website using Eleventy as a static site generator with Nunjucks for templating and Bulma CSS styling using files borrowed from the Fastify website (Fastify uses the MetalSmith static site generator with Nunjucks and Bulma). Very quickly started to dislike the entire Nunjucks templating system with layouts, partials, front matter and so on. The Hugo static site generator is complicated but Eleventy and Nunjucks is almost as complicated. I just want to use HTML custom tags for a header and footer and have Markdown files pulled into a page.
+
+## June 25, 2020
+
+### Setting up tutorials.yax.com
+I decided to explore if I can use HTML custom tags to generate pages from Markdown files for a simple tutorial site without a build process or static site generator. I found a web component [prism-markdown-element](https://github.com/GermanMtzmx/prism-markdown-element) from German Martinez Solis that converts a Markdown file to HTML, applies syntax highlighting to any code blocks, and displays the content on a web page. Nice to see it can be done! That means I can load Markdown files into web pages for a tutorial site without a template system or a static site generator.
+
+## June 26, 2020
+
+### Setting up tutorials.yax.com
+The [prism-markdown-element](https://github.com/GermanMtzmx/prism-markdown-element) web component depends on NPM packages for Markdown conversion ([commonmark](https://www.npmjs.com/package/commonmark)) and syntax highlighting ([prismjs](https://www.npmjs.com/package/prismjs)). The author of the web component assumes developers use some JavaScript tooling to install the NPM packages. I don’t want to install and bundle Node modules, I want to use JavaScript directly from the browser without a build process. Really! I read about [ES6 modules](https://exploringjs.com/es6/ch_modules.html) in a good book from Axel Rauschmayer. Then I found my Cape Town friend [Guy Bedford](https://twitter.com/guybedford) (who is a netgod of JavaScript system internals) recently (June 19, 2020) set up the [jspm.org](https://jspm.org/) CDN at jspm.dev to deliver any NPM package in a form that can be used directly from a web browser. No JavaScript tooling required for bundling packages with Rollup or WebPack. I replaced filesystem imports with jspm.dev CDN imports in the prism-markdown-element. Very pleased to see it work (thank you, Guy Bedford!).
+
+## June 27, 2020
+
+### Repository for assets-yax-com
+If I’m going to have a few web components (starting with yax-markdown, yax-header, yax-footer) I probably should recognize I’ve got the beginning of a web component library and create a separate GitHub repository to manage all the web assets that will be shared between the sites tutorials.yax.com, templates.yax.com, and the main yax.com site. So I created the [assets-yax-com](https://github.com/yaxdotcom/assets-yax-com) GitHub project. Haha now I have the beginning of my own design system library and I’m not even a very senior front end developer.
 
 [Previous: Worklog for May 2020]({{< ref "/posts/worklog-may-2020.md" >}})
