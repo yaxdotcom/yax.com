@@ -1,7 +1,7 @@
 +++
 canonical_url = "https://yax.com/posts/worklog-june-2020/"
 content_img_path = ""
-date = 2020-06-21T16:00:00Z
+date = 2020-06-28T08:00:00Z
 excerpt = "A day by day description of the technical and business challenges building Yax.com."
 layout = "post"
 subtitle = ""
@@ -166,5 +166,30 @@ The [prism-markdown-element](https://github.com/GermanMtzmx/prism-markdown-eleme
 
 ### Repository for assets-yax-com
 If I’m going to have a few web components (starting with yax-markdown, yax-header, yax-footer) I probably should recognize I’ve got the beginning of a web component library and create a separate GitHub repository to manage all the web assets that will be shared between the sites tutorials.yax.com, templates.yax.com, and the main yax.com site. So I created the [assets-yax-com](https://github.com/yaxdotcom/assets-yax-com) GitHub project. Haha now I have the beginning of my own design system library and I’m not even a very senior front end developer.
+
+## June 28, 2020
+
+### Retrospective
+It’s been two months since I started building yax.com. I really want to get to the point where I can get user feedback and find out if there’s a market for what I’m building. So far I’ve just been diving deeper into technology. And that’s the problem I want to address with yax.com. It shouldn’t require two months of exploring the newest technologies for web development to build a website to test an idea. I need a website for tutorials. There should be a good template on yax.com that I can deploy and then upload tutorials written in Markdown. Anyway, I’ll get there. I know this is always a problem for tech entrepreneurs. We get caught up with solving technical problems and defer engaging with potential customers.
+
+### Sources of happiness
+
+* I’ve been happy with the Bulma CSS framework. I’m implementing design and layout quickly without feeling like I’m fighting with CSS.
+* I like building API endpoints in Ruby and deploying them on Vercel. It’s sweet and easy.
+* I’m happy to have the GitHub API to create repositories and copy files. It’s capable of providing the key infrastructure I need for my yax.com project.
+* I like Mavo for its instant in-page editing and its extension of the declarative HTML language syntax.
+* I’m thrilled about web components (specifically, HTML custom tags). I’ve really wanted this since the early days of the web. It’s been a long time coming. I’m also thrilled about JavaScript ES6 modules. That’s also been a long time coming; JavaScript has needed a build-in package manager since day one. Web components and ES6 modules enable modularity for HTML and JavaScript so we get separation of concerns, reusability, and maintainability right in the browser without frameworks or build systems. It’s a bright new dawn for web development in 2020.
+* I was thrilled to find out [Guy Bedford](https://twitter.com/guybedford) released the [jspm.org](https://jspm.org/) CDN so I can import any NPM package directly in the browser without a build process.
+* I’m happy I’m living in Bali. I’m staying healthy and living well, with a great opportunity to focus on the yax.com project. I’m blessedly lucky that I had the opportunity to come here on March 19th.
+
+### Mixed feelings
+
+* I was intrigued with the Dark concept of an integrated editor, API query tool, and web server with its own advanced programming language. It was very useful for prototyping but a language bug kept me from going further.
+* OAuth authentication hasn’t gotten any easier but I managed to implement what I needed for the GitHub API.
+
+### Sources of unhappiness
+
+* I’m disappointed with static site generators (specifically Eleventy and Hugo) and templating languages (Nunjucks and Go templates). The SSGs are basic to the JAMstack approach and I was hoping they’d make web development easier. I’ll continue to use Hugo for this blog because I’ve got it figured out for this simple use case. But there’s just too much cognitive overhead to sort out the configuration maze to build a site for my template library. And with web components, I think it’s just not needed.
+* Looking at the world beyond Bali and my own little tech project, I’m saddened and dismayed to see the pandemic raging with no indication that it is subsiding.
 
 [Previous: Worklog for May 2020]({{< ref "/posts/worklog-may-2020.md" >}})
