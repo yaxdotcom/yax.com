@@ -32,7 +32,7 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> {{ if .Site.Params.theme_variant }}
     <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/{{.Site.Params.theme_variant}}/bulmaswatch.min.css"> {{else}}
-    <link rel="stylesheet" href="/css/bulma.css"> {{end}}
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.css"> {{end}}
     <link rel="stylesheet" href="/css/landing.css"> {{ block "style" .}} {{end}} {{ $lazylist := findRE "class=\".*?\\blazyload\\b.*?\"|class=lazyload\b" .Content }}
     <!-- http://regexr.com/3f9d1 -->
     {{ if ge (len $lazylist) 1 }}
@@ -41,6 +41,8 @@
     {{ if .IsHome }}
     <script async src="/javascript/sendinblue-subscribe.js"></script>
     {{ end }}
+    <!-- custom tags -->
+    <script type="module" src="https://assets.yax.com/scripts/yax-tags-library.js"></script>
     <!-- Crisp live chat -->
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="a2a38433-d613-419d-8279-f7904b74943f";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 </head>
