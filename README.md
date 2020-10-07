@@ -1,6 +1,6 @@
-# try-yax-com
+# yax,com
 
-Demo/preview for the [yax.com](https://yax.com) project.
+Main site for the [yax.com](https://yax.com) project.
 
 ## Viewing locally
 
