@@ -1,15 +1,20 @@
-# Created by https://www.gitignore.io/api/hugo,macos
-# Edit at https://www.gitignore.io/?templates=hugo,macos
+# Created by https://www.gitignore.io/api/git,macos
+# Edit at https://www.gitignore.io/?templates=git,macos
 
-### Hugo ###
-# Generated files by hugo
-/public/
-/resources/_gen/
+### Git ###
+# Created by git for backups. To disable backups in Git:
+# $ git config --global mergetool.keepBackup false
+*.orig
 
-# Executable may be added to repository
-hugo.exe
-hugo.darwin
-hugo.linux
+# Created by git when using merge tools for conflicts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
 
 ### macOS ###
 # General
@@ -31,3 +36,12 @@ Icon
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# End of https://www.gi
