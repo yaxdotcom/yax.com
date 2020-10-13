@@ -10,6 +10,10 @@
     analytics.load("6FavLc7XSWpcaOQg3KCYEhF3NG7wXKa8");
     analytics.page();
     }}();
+    analytics.ready(function () {
+      ga('require', 'linker');
+      ga('linker:autoLink', ['yax.com']);
+    });
   </script>
   <link rel="icon" href="favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="https://assets.yax.com/images/favicons/apple-touch-icon.png">
